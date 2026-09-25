@@ -11,13 +11,12 @@ ConnectionString
         {
             get
             {
-                return ConfigurationManager.ConnectionStrings["QuanLyKhachSanDB"].ConnectionString;
+                return ConfigurationManager.ConnectionStrings["QuanLyKhachSan"].ConnectionString;
             }
         }
         public static SqlConnection OpenConnection()
         {
-            var cn = new
-        SqlConnection(ConnectionString); cn.Open(); return cn;
+            var cn = new SqlConnection(ConnectionString); cn.Open(); return cn;
         }
         public static DataTable Query(string
         sql, params SqlParameter[] ps)

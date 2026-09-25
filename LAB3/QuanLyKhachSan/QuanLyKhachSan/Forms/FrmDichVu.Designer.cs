@@ -2,15 +2,8 @@
 {
     partial class FrmDichVu
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,212 +15,204 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgvKhu = new System.Windows.Forms.DataGridView();
-            this.ColSoPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblLuot = new System.Windows.Forms.Label();
             this.cboLuot = new System.Windows.Forms.ComboBox();
+            this.lblPhong = new System.Windows.Forms.Label();
+            this.txtPhong = new System.Windows.Forms.TextBox();
+            this.lblDV = new System.Windows.Forms.Label();
             this.cboDV = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhu)).BeginInit();
+            this.lblNgay = new System.Windows.Forms.Label();
+            this.dtNgay = new System.Windows.Forms.DateTimePicker();
+            this.lblSL = new System.Windows.Forms.Label();
+            this.numSL = new System.Windows.Forms.NumericUpDown();
+            this.lblNV = new System.Windows.Forms.Label();
+            this.cboNV = new System.Windows.Forms.ComboBox();
+            this.btnGhi = new System.Windows.Forms.Button();
+            this.dgvLichSu = new System.Windows.Forms.DataGridView();
+            this.btnDong = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numSL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblLuot
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Phiếu lưu trú:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 106);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ngày sử dụng:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(361, 106);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 22);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Số lượng:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(361, 33);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 22);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Phòng:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(648, 33);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 22);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Dịch vụ:";
-            // 
-            // dgvKhu
-            // 
-            this.dgvKhu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvKhu.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvKhu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColSoPhieu,
-            this.ColPhong,
-            this.ColNgay,
-            this.ColDichVu,
-            this.ColSoLuong,
-            this.ColDonGia,
-            this.ColThanhTien});
-            this.dgvKhu.GridColor = System.Drawing.SystemColors.WindowText;
-            this.dgvKhu.Location = new System.Drawing.Point(15, 187);
-            this.dgvKhu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvKhu.MultiSelect = false;
-            this.dgvKhu.Name = "dgvKhu";
-            this.dgvKhu.ReadOnly = true;
-            this.dgvKhu.RowHeadersVisible = false;
-            this.dgvKhu.RowHeadersWidth = 51;
-            this.dgvKhu.RowTemplate.Height = 24;
-            this.dgvKhu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhu.Size = new System.Drawing.Size(970, 415);
-            this.dgvKhu.TabIndex = 6;
-            // 
-            // ColSoPhieu
-            // 
-            this.ColSoPhieu.HeaderText = "Số phiếu";
-            this.ColSoPhieu.MinimumWidth = 6;
-            this.ColSoPhieu.Name = "ColSoPhieu";
-            this.ColSoPhieu.ReadOnly = true;
-            // 
-            // ColPhong
-            // 
-            this.ColPhong.HeaderText = "Phòng";
-            this.ColPhong.MinimumWidth = 6;
-            this.ColPhong.Name = "ColPhong";
-            this.ColPhong.ReadOnly = true;
-            // 
-            // ColNgay
-            // 
-            this.ColNgay.HeaderText = "Ngày";
-            this.ColNgay.MinimumWidth = 6;
-            this.ColNgay.Name = "ColNgay";
-            this.ColNgay.ReadOnly = true;
-            // 
-            // ColDichVu
-            // 
-            this.ColDichVu.HeaderText = "Dịch vụ";
-            this.ColDichVu.MinimumWidth = 6;
-            this.ColDichVu.Name = "ColDichVu";
-            this.ColDichVu.ReadOnly = true;
-            // 
-            // ColSoLuong
-            // 
-            this.ColSoLuong.HeaderText = "Số lượng";
-            this.ColSoLuong.MinimumWidth = 6;
-            this.ColSoLuong.Name = "ColSoLuong";
-            this.ColSoLuong.ReadOnly = true;
-            // 
-            // ColDonGia
-            // 
-            this.ColDonGia.HeaderText = "Đơn giá";
-            this.ColDonGia.MinimumWidth = 6;
-            this.ColDonGia.Name = "ColDonGia";
-            this.ColDonGia.ReadOnly = true;
-            // 
-            // ColThanhTien
-            // 
-            this.ColThanhTien.HeaderText = "Thành tiền";
-            this.ColThanhTien.MinimumWidth = 6;
-            this.ColThanhTien.Name = "ColThanhTien";
-            this.ColThanhTien.ReadOnly = true;
+            this.lblLuot.AutoSize = true;
+            this.lblLuot.Location = new System.Drawing.Point(12, 16);
+            this.lblLuot.Name = "lblLuot";
+            this.lblLuot.Size = new System.Drawing.Size(127, 20);
+            this.lblLuot.TabIndex = 0;
+            this.lblLuot.Text = "Lượt đang lưu trú:";
             // 
             // cboLuot
             // 
+            this.cboLuot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLuot.FormattingEnabled = true;
-            this.cboLuot.Location = new System.Drawing.Point(149, 30);
+            this.cboLuot.Location = new System.Drawing.Point(145, 13);
             this.cboLuot.Name = "cboLuot";
-            this.cboLuot.Size = new System.Drawing.Size(121, 30);
-            this.cboLuot.TabIndex = 7;
+            this.cboLuot.Size = new System.Drawing.Size(160, 28);
+            this.cboLuot.TabIndex = 1;
+            this.cboLuot.SelectedIndexChanged += new System.EventHandler(this.cboLuot_SelectedIndexChanged);
+            // 
+            // lblPhong
+            // 
+            this.lblPhong.AutoSize = true;
+            this.lblPhong.Location = new System.Drawing.Point(311, 16);
+            this.lblPhong.Name = "lblPhong";
+            this.lblPhong.Size = new System.Drawing.Size(54, 20);
+            this.lblPhong.TabIndex = 2;
+            this.lblPhong.Text = "Phòng:";
+            // 
+            // txtPhong
+            // 
+            this.txtPhong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhong.Location = new System.Drawing.Point(385, 11);
+            this.txtPhong.Name = "txtPhong";
+            this.txtPhong.ReadOnly = true;
+            this.txtPhong.Size = new System.Drawing.Size(80, 27);
+            this.txtPhong.TabIndex = 3;
+            // 
+            // lblDV
+            // 
+            this.lblDV.AutoSize = true;
+            this.lblDV.Location = new System.Drawing.Point(486, 16);
+            this.lblDV.Name = "lblDV";
+            this.lblDV.Size = new System.Drawing.Size(61, 20);
+            this.lblDV.TabIndex = 4;
+            this.lblDV.Text = "Dịch vụ:";
             // 
             // cboDV
             // 
+            this.cboDV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDV.FormattingEnabled = true;
-            this.cboDV.Location = new System.Drawing.Point(730, 30);
+            this.cboDV.Location = new System.Drawing.Point(555, 11);
             this.cboDV.Name = "cboDV";
-            this.cboDV.Size = new System.Drawing.Size(121, 30);
-            this.cboDV.TabIndex = 8;
+            this.cboDV.Size = new System.Drawing.Size(140, 28);
+            this.cboDV.TabIndex = 5;
             // 
-            // textBox1
+            // lblNgay
             // 
-            this.textBox1.Location = new System.Drawing.Point(479, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 28);
-            this.textBox1.TabIndex = 9;
+            this.lblNgay.AutoSize = true;
+            this.lblNgay.Location = new System.Drawing.Point(12, 54);
+            this.lblNgay.Name = "lblNgay";
+            this.lblNgay.Size = new System.Drawing.Size(47, 20);
+            this.lblNgay.TabIndex = 6;
+            this.lblNgay.Text = "Ngày:";
             // 
-            // textBox2
+            // dtNgay
             // 
-            this.textBox2.Location = new System.Drawing.Point(478, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 28);
-            this.textBox2.TabIndex = 10;
+            this.dtNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgay.Location = new System.Drawing.Point(59, 50);
+            this.dtNgay.Name = "dtNgay";
+            this.dtNgay.Size = new System.Drawing.Size(100, 27);
+            this.dtNgay.TabIndex = 7;
+            // 
+            // lblSL
+            // 
+            this.lblSL.AutoSize = true;
+            this.lblSL.Location = new System.Drawing.Point(165, 54);
+            this.lblSL.Name = "lblSL";
+            this.lblSL.Size = new System.Drawing.Size(72, 20);
+            this.lblSL.TabIndex = 8;
+            this.lblSL.Text = "Số lượng:";
+            // 
+            // numSL
+            // 
+            this.numSL.Location = new System.Drawing.Point(243, 50);
+            this.numSL.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSL.Name = "numSL";
+            this.numSL.Size = new System.Drawing.Size(55, 27);
+            this.numSL.TabIndex = 9;
+            this.numSL.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblNV
+            // 
+            this.lblNV.AutoSize = true;
+            this.lblNV.Location = new System.Drawing.Point(333, 54);
+            this.lblNV.Name = "lblNV";
+            this.lblNV.Size = new System.Drawing.Size(32, 20);
+            this.lblNV.TabIndex = 10;
+            this.lblNV.Text = "NV:";
+            // 
+            // cboNV
+            // 
+            this.cboNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNV.FormattingEnabled = true;
+            this.cboNV.Location = new System.Drawing.Point(385, 49);
+            this.cboNV.Name = "cboNV";
+            this.cboNV.Size = new System.Drawing.Size(140, 28);
+            this.cboNV.TabIndex = 11;
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGhi.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnGhi.Location = new System.Drawing.Point(555, 50);
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.Size = new System.Drawing.Size(140, 28);
+            this.btnGhi.TabIndex = 12;
+            this.btnGhi.Text = "Ghi nhận DV";
+            this.btnGhi.UseVisualStyleBackColor = true;
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // dgvLichSu
+            // 
+            this.dgvLichSu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLichSu.Location = new System.Drawing.Point(12, 90);
+            this.dgvLichSu.Name = "dgvLichSu";
+            this.dgvLichSu.RowHeadersWidth = 51;
+            this.dgvLichSu.Size = new System.Drawing.Size(683, 309);
+            this.dgvLichSu.TabIndex = 13;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Location = new System.Drawing.Point(610, 405);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(85, 30);
+            this.btnDong.TabIndex = 14;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // FrmDichVu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 619);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(707, 447);
+            this.Controls.Add(this.btnDong);
+            this.Controls.Add(this.dgvLichSu);
+            this.Controls.Add(this.btnGhi);
+            this.Controls.Add(this.cboNV);
+            this.Controls.Add(this.lblNV);
+            this.Controls.Add(this.numSL);
+            this.Controls.Add(this.lblSL);
+            this.Controls.Add(this.dtNgay);
+            this.Controls.Add(this.lblNgay);
             this.Controls.Add(this.cboDV);
+            this.Controls.Add(this.lblDV);
+            this.Controls.Add(this.txtPhong);
+            this.Controls.Add(this.lblPhong);
             this.Controls.Add(this.cboLuot);
-            this.Controls.Add(this.dgvKhu);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.lblLuot);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FrmDichVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sử dụng dịch vụ";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhu)).EndInit();
+            this.Load += new System.EventHandler(this.FrmDichVu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numSL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,22 +220,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvKhu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColSoPhieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNgay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColDichVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColSoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColDonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColThanhTien;
+        private System.Windows.Forms.Label lblLuot;
         private System.Windows.Forms.ComboBox cboLuot;
+        private System.Windows.Forms.Label lblPhong;
+        private System.Windows.Forms.TextBox txtPhong;
+        private System.Windows.Forms.Label lblDV;
         private System.Windows.Forms.ComboBox cboDV;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblNgay;
+        private System.Windows.Forms.DateTimePicker dtNgay;
+        private System.Windows.Forms.Label lblSL;
+        private System.Windows.Forms.NumericUpDown numSL;
+        private System.Windows.Forms.Label lblNV;
+        private System.Windows.Forms.ComboBox cboNV;
+        private System.Windows.Forms.Button btnGhi;
+        private System.Windows.Forms.DataGridView dgvLichSu;
+        private System.Windows.Forms.Button btnDong;
     }
 }

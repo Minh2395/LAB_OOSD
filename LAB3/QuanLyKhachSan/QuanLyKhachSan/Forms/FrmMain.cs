@@ -16,8 +16,7 @@ partial class FrmMain : Form
         {
             using (var f = new FrmDatPhong()) f.ShowDialog(this);
         }
-        private void btnDichVu_Click(object s, EventArgs
-e)
+        private void btnDichVu_Click(object s, EventArgs e)
         { using (var f = new FrmDichVu()) f.ShowDialog(this); }
         private void btnTraPhong_Click(object s, EventArgs e)
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using QuanLyKhachSan.Models;
 using QuanLyKhachSan.Services;
 
 namespace QuanLyKhachSan.Forms
@@ -10,7 +11,6 @@ namespace QuanLyKhachSan.Forms
     {
         readonly DatPhongService s = new DatPhongService();
         readonly DanhMucService dm = new DanhMucService();
-
         BindingList<PhongDatItem> chon = new BindingList<PhongDatItem>();
 
         public FrmDatPhong()
@@ -18,7 +18,7 @@ namespace QuanLyKhachSan.Forms
             InitializeComponent();
         }
 
-        private void Frm_Load(object a, EventArgs e)
+        private void FrmDatPhong_Load(object sender, EventArgs e)
         {
             cboKhach.DataSource = s.LayKhach();
             cboKhach.DisplayMember = "HoTen";
@@ -28,147 +28,90 @@ namespace QuanLyKhachSan.Forms
             cboNV.DisplayMember = "HoTen";
             cboNV.ValueMember = "MaNV";
 
-            cboKenh.Items.AddRange(new object[]
-            {
-                "Điện thoại",
-                "Website",
-                "Trực tiếp"
-            });
-
+            cboKenh.Items.AddRange(new object[] { "Điện thoại", "Website", "Trực tiếp" });
             cboKenh.SelectedIndex = 0;
 
             dgvChon.DataSource = chon;
-
-            Tai();
+            TaiDuLieu();
         }
 
-        void Tai()
+        void TaiDuLieu()
         {
             dgvKhach.DataSource = s.LayKhach();
             dgvPhong.DataSource = s.LayPhong();
             dgvPhieu.DataSource = s.LayPhieuDat();
         }
 
-        string V(ComboBox c)
+        string V(ComboBox c) => c.SelectedValue?.ToString() ?? "";
+
+        void ThongBao(KetQuaXuLy k)
         {
-            return c.SelectedValue == null
-                ? ""
-                : c.SelectedValue.ToString();
+            MessageBox.Show(k.ThongBao, "Thông báo");
+            if (k.ThanhCong) TaiDuLieu();
         }
 
-        void H(KetQuaXuLy k)
+        private void btnThemKhach_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(k.ThongBao);
-
-            if (k.ThanhCong)
-                Tai();
+            ThongBao(s.ThemKhach(txtMaKH.Text.Trim(), txtTenKH.Text.Trim(), txtCMND.Text.Trim(), txtQT.Text.Trim(), txtSDT.Text.Trim()));
         }
 
-        private void btnThemKhach_Click(object a, EventArgs e)
+        private void btnThemPhong_Click(object sender, EventArgs e)
         {
-            H(s.ThemKhach(
-                txtMaKH.Text.Trim(),
-                txtTenKH.Text.Trim(),
-                txtCMND.Text.Trim(),
-                txtQT.Text.Trim(),
-                txtSDT.Text.Trim()));
-        }
-
-        private void btnThemPhong_Click(object a, EventArgs e)
-        {
-            if (dgvPhong.CurrentRow == null)
-                return;
-
-            string p = Convert.ToString(
-                dgvPhong.CurrentRow.Cells["SoPhong"].Value);
-
+            if (dgvPhong.CurrentRow == null) return;
+            string p = Convert.ToString(dgvPhong.CurrentRow.Cells["SoPhong"].Value);
             foreach (var x in chon)
             {
                 if (x.SoPhong == p)
                 {
-                    MessageBox.Show("Phòng đã có trong phiếu.");
+                    MessageBox.Show("Phòng này đã có trong danh sách chọn.");
                     return;
                 }
             }
-
-            int n = (int)numSoNguoi.Value;
-
-            decimal g = Convert.ToDecimal(
-                dgvPhong.CurrentRow.Cells["DonGiaNgay"].Value);
-
             chon.Add(new PhongDatItem
             {
                 SoPhong = p,
-                SoNguoi = n,
-                DonGiaNgay = g
+                SoNguoi = (int)numSoNguoi.Value,
+                DonGiaNgay = Convert.ToDecimal(dgvPhong.CurrentRow.Cells["DonGiaNgay"].Value)
             });
         }
 
-        private void btnBoPhong_Click(object a, EventArgs e)
+        private void btnBoPhong_Click(object sender, EventArgs e)
         {
-            if (dgvChon.CurrentRow != null &&
-                dgvChon.CurrentRow.Index >= 0 &&
-                dgvChon.CurrentRow.Index < chon.Count)
-            {
+            if (dgvChon.CurrentRow != null && dgvChon.CurrentRow.Index < chon.Count)
                 chon.RemoveAt(dgvChon.CurrentRow.Index);
-            }
         }
 
-        private void btnLapPhieu_Click(object a, EventArgs e)
+        private void btnLapPhieu_Click(object sender, EventArgs e)
         {
-            H(s.TaoDatPhong(
-                txtSoPhieu.Text.Trim(),
-                V(cboKhach),
-                V(cboNV),
-                dtLap.Value,
-                dtNhan.Value,
-                dtTra.Value,
-                numCoc.Value,
-                cboKenh.Text,
-                new List<PhongDatItem>(chon)));
-
-            if (chon.Count > 0)
-                chon.Clear();
+            ThongBao(s.TaoDatPhong(txtSoPhieu.Text.Trim(), V(cboKhach), V(cboNV), dtLap.Value, dtNhan.Value, dtTra.Value, numCoc.Value, cboKenh.Text, new List<PhongDatItem>(chon)));
+            chon.Clear();
         }
 
-        private void dgvPhieu_SelectionChanged(object a, EventArgs e)
+        private void dgvPhieu_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvPhieu.CurrentRow == null)
-                return;
-
-            string so = Convert.ToString(
-                dgvPhieu.CurrentRow.Cells["SoPhieuDat"].Value);
-
+            if (dgvPhieu.CurrentRow == null) return;
+            string so = Convert.ToString(dgvPhieu.CurrentRow.Cells["SoPhieuDat"].Value);
             txtPhieuChon.Text = so;
-
             dgvCT.DataSource = s.LayChiTiet(so);
             dgvNguoi.DataSource = s.LayNguoiLuuTru(so);
         }
 
-        private void btnThemNguoi_Click(object a, EventArgs e)
+        private void btnThemNguoi_Click(object sender, EventArgs e)
         {
-            H(s.ThemNguoiLuuTru(
-                txtPhieuChon.Text.Trim(),
-                txtNguoiPhong.Text.Trim(),
-                txtNguoiTen.Text.Trim(),
-                txtNguoiCMND.Text.Trim(),
-                txtNguoiQT.Text.Trim()));
+            ThongBao(s.ThemNguoiLuuTru(txtPhieuChon.Text.Trim(), txtNguoiPhong.Text.Trim(), txtNguoiTen.Text.Trim(), txtNguoiCMND.Text.Trim(), txtNguoiQT.Text.Trim()));
         }
 
-        private void btnNhanPhong_Click(object a, EventArgs e)
+        private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-            H(s.NhanPhong(
-                txtPhieuChon.Text.Trim(),
-                DateTime.Now));
+            ThongBao(s.NhanPhong(txtPhieuChon.Text.Trim(), DateTime.Now));
         }
 
-        private void btnNoShow_Click(object a, EventArgs e)
+        private void btnNoShow_Click(object sender, EventArgs e)
         {
-            H(s.DanhDauNoShow(
-                txtPhieuChon.Text.Trim()));
+            ThongBao(s.DanhDauNoShow(txtPhieuChon.Text.Trim()));
         }
 
-        private void btnDong_Click(object a, EventArgs e)
+        private void btnDong_Click(object sender, EventArgs e)
         {
             Close();
         }

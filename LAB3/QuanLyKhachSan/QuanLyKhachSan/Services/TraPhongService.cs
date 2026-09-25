@@ -7,6 +7,7 @@ using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Windows.Forms;
+using QuanLyKhachSan.Models;
 
 namespace QuanLyKhachSan.Services
 {

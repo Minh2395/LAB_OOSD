@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using QuanLyKhachSan.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace QuanLyKhachSan.Services
