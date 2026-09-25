@@ -101,6 +101,7 @@
     <Compile Include="Services\DanhMucService.cs" />
     <Compile Include="Services\DatPhongService.cs" />
     <Compile Include="Services\DichVuService.cs" />
+    <Compile Include="Services\KetQuaXuLy.cs" />
     <Compile Include="Services\PhongTienNghiService.cs" />
     <Compile Include="Services\ThongKeService.cs" />
     <Compile Include="Services\TraPhongService.cs" />
