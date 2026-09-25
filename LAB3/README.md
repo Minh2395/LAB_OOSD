@@ -22,7 +22,7 @@ LAB3/
 └── QuanLyKhachSan/
     ├── QuanLyKhachSan.sln
     ├── QuanLyKhachSan/
-    └── SQLQuery1.sql
+    └── QuanLyKhachSan.sql
 ```
 
 ## 4. Cách tải và chạy chương trình
