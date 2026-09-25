@@ -22,7 +22,7 @@ LAB3/
 └── QuanLyKhachSan/
     ├── QuanLyKhachSan.sln
     ├── QuanLyKhachSan/
-    └── SQLQuery1.sql
+    └── QuanLyKhachSan.sql
 ```
 
 ## 4. Cách tải và chạy chương trình
@@ -90,6 +90,6 @@ Nếu cấu hình đúng, ứng dụng quản lý thư viện sẽ được kh�
 ### 4.6. Lưu ý
 
 - Cần cài đặt **Visual Studio** và **SQL Server** trước khi chạy chương trình.
-- Cần thực thi file **`SQLQuery1.sql`** để tạo cơ sở dữ liệu.
+- Cần thực thi file **`QuanLyKhachSan.sql`** để tạo cơ sở dữ liệu.
 - Kiểm tra lại `Data Source` trong **`App.config`** nếu chương trình không kết nối được với SQL Server.
 - Đảm bảo **SQL Server đang hoạt động** trước khi chạy chương trình.
